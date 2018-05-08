@@ -4,19 +4,21 @@ import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
 
 import { MyApp } from "./app.component";
 import { HomePage } from "../pages/home/home";
-import { ListPage } from "../pages/list/list";
+import { ProfilePage } from "../pages/profile/profile";
 
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 
 import { LeafletModule } from "@asymmetrik/ngx-leaflet";
 import { VetPage } from "../pages/vet/vet";
+import { VetSearchPage } from "../pages/vet-search/vet-search";
+import { VeterinaryPage } from "../pages/veterinary/veterinary";
 
 @NgModule({
-  declarations: [MyApp, HomePage, ListPage, VetPage],
+  declarations: [MyApp, HomePage, ProfilePage, VetPage, VeterinaryPage, VetSearchPage],
   imports: [BrowserModule, IonicModule.forRoot(MyApp), LeafletModule.forRoot()],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, HomePage, ListPage, VetPage],
+  entryComponents: [MyApp, HomePage, ProfilePage, VetPage, VeterinaryPage, VetSearchPage],
   providers: [StatusBar, SplashScreen, { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule {}

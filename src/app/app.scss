@@ -17,14 +17,36 @@
   $vetHeight: 150px;
   .popover-content {
     top: auto !important;
-    left: calc(50% - $vetWidth/2) !important;
     bottom: 5px;
-    height: $vetHeight;
+    min-height: $vetHeight;
     width: $vetWidth;
-    background: color($colors, 'favorite');
+    background: color($colors, 'light');
+    color: color($colors, 'dark');
   }
   .scroll-content {
-    background: color($colors, 'favorite');
+    background: color($colors, 'light');
     overflow: hidden !important;
+    color: color($colors, 'dark');
+  }
+}
+
+.list-menu {
+  height: 100%;
+  color: white;
+  background-color: color($colors, "favorite");
+  button[ion-item] {
+    color: white;
+    font-weight: 900;
+    background-color: color($colors, "favorite")
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    .scroll-content {
+      text-align: center;
+      padding-left: 15% !important;
+      padding-right: 15% !important;
+    }
   }
 }

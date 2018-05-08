@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import { NavController, NavParams } from "ionic-angular";
+import { NavController, ViewController } from "ionic-angular";
+import { VeterinaryPage } from "../veterinary/veterinary";
 @Component({
   selector: "page-vet",
   templateUrl: "vet.html"
@@ -7,9 +8,25 @@ import { NavController, NavParams } from "ionic-angular";
 export class VetPage {
   vet = {
     name: "Veterinaria",
+    color: "#FGBADD",
+    address: "Cra. 14 #87-63",
+    schedule: "",
     img: "./assets/imgs/pet-marker.png",
-    description: "Veteriana test"
+    description: "Veteriana test",
+    phone_number: "555-55555",
+    email: "doggo@doge.com",
+    website: "http://itsdoge.com",
+    rate: 5
   };
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController) {}
   ionViewDidLoad() {}
+
+  dismiss() {
+    this.viewCtrl.dismiss();
+  }
+
+  openTab() {
+    this.navCtrl.push(VeterinaryPage, { veterinary: this.vet }, { animation: "ios" });
+    this.dismiss();
+  }
 }

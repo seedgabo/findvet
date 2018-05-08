@@ -1,13 +1,45 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar color="favorite">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      <span>Find</span>
+      <b>VET</b>
+      <ion-icon name="paw"></ion-icon>
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content no-padding>
-  <div class="map" leaflet [leafletOptions]="options" [leafletLayers]="layers">
+  <ion-fab edge top right>
+    <button mini ion-fab color="primary" (click)="modalSearch()">
+      <ion-icon name="search"></ion-icon>
+    </button>
+  </ion-fab>
+  <div style="height: 100%" [hidden]="view != 'map'">
+    <div class="map" leaflet [leafletOptions]="options" [leafletLayers]="layers" [leafletCenter]="options.center">
+    </div>
+  </div>
+
+  <div style="height: 100%" [hidden]="view != 'list'">
+    <ion-list>
+      <button ion-item *ngFor="let vet of vets">
+        <ion-thumbnail item-left>
+          <img [src]="vet.img" alt="">
+        </ion-thumbnail>
+        <h2>{{vet.name}}</h2>
+        <p text-wrap>{{vet.description}}</p>
+      </button>
+    </ion-list>
+  </div>
+
+  <div class="geofence-bottom-buttons">
+    <button ion-button class="grouped left" [ngClass]="{'active': view == 'map'}" (click)="view == 'list' && toggle()">
+      Map
+    </button>
+    <button ion-button class="grouped right" [ngClass]="{'active': view == 'list'}" (click)="view == 'map' && toggle()">
+      List
+    </button>
   </div>
 </ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <ion-icon name="search"></ion-icon>
+      Buscar
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button clear icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-searchbar></ion-searchbar>
+  <ion-card no-padding>
+    <ion-list>
+      <ion-item>
+        <ion-icon item-left color="primary" name="paw"></ion-icon>
+        <ion-label>Veterinarias</ion-label>
+        <ion-toggle checked></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-left color="primary" name="pricetags"></ion-icon>
+        <ion-label>Tiendas</ion-label>
+        <ion-toggle checked></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-left color="primary" name="medical"></ion-icon>
+        <ion-label>Atencion Medica</ion-label>
+        <ion-toggle checked></ion-toggle>
+      </ion-item>
+      <hr>
+    </ion-list>
+  </ion-card>
+</ion-content>

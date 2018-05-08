@@ -6,8 +6,60 @@ page-home {}
 }
 
 .vet-marker {
+  overflow: visible;
+  h5 {
+    text-align: center;
+    vertical-align: middle;
+    min-width: 75px;
+    padding: 2px;
+    margin-left: -150%;
+    margin-top: 0px;
+    font-size: 10px;
+    background-color: #333;
+    color: white;
+    font-weight: 900;
+  }
   img {
     height: 40px;
     width: 40px;
+  }
+}
+
+.geofence-bottom-buttons {
+  text-align: center;
+  transition-timing-function: linear;
+  transition: all 250ms;
+  position: fixed;
+  bottom: 10px;
+  z-index: 10000;
+  width: 100%;
+  pointer-events: none;
+  button {
+    pointer-events: all !important;
+  }
+}
+
+.grouped {
+  font-size: 16px;
+  margin: 20px 0;
+  background-color: rgba(224, 224, 224, 0.96);
+  color: black;
+  text-transform: none;
+  font-weight: 400;
+  min-width: 100px;
+  &.active {
+    background-color: color($colors, "primary");
+    color: white;
+  }
+  &.left {
+    border-radius: 10px 0 0 10px;
+  }
+  &.middle {
+    border-radius: 0;
+    border-left: 1px solid rgba(230, 230, 230, 0.96);
+    border-right: 1px solid rgba(230, 230, 230, 0.96);
+  }
+  &.right {
+    border-radius: 0 10px 10px 0;
   }
 }
