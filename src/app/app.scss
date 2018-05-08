@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +12,19 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.vet-panel {
+  $vetWidth: 300px;
+  $vetHeight: 150px;
+  .popover-content {
+    top: auto !important;
+    left: calc(50% - $vetWidth/2) !important;
+    bottom: 5px;
+    height: $vetHeight;
+    width: $vetWidth;
+    background: color($colors, 'favorite');
+  }
+  .scroll-content {
+    background: color($colors, 'favorite');
+    overflow: hidden !important;
+  }
+}
