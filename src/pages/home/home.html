@@ -19,13 +19,13 @@
   </ion-fab>
   <div style="height: 100%" [hidden]="view != 'map'">
     <div (leafletMapReady)="onMapReady($event)" class="map" leaflet [leafletOptions]="options" [leafletLayers]="layers" [leafletCenter]="options.center">
-
     </div>
   </div>
 
   <div style="height: 100%" [hidden]="view != 'list'">
     <ion-list>
-      <button ion-item *ngFor="let vet of api.vets">
+      <button (click)="openTab(vet)" ion-item *ngFor="let vet of api.vets">
+
         <ion-thumbnail item-left>
           <img [src]="vet.img" alt="">
         </ion-thumbnail>

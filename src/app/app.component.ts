@@ -20,7 +20,11 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [{ title: "Veterinarias", component: HomePage, icon: "home" }, { title: "Perfil", component: ProfilePage, icon: "paw" }];
+    this.pages = [
+      { title: "Veterinarias", component: HomePage, icon: "home" },
+      { title: "Perfil", component: ProfilePage, icon: "paw" },
+      { title: "Acerca", component: "AboutPage", icon: "help" }
+    ];
   }
 
   initializeApp() {

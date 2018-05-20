@@ -5,6 +5,7 @@ import { VetPage } from "../vet/vet";
 
 import { VetSearchPage } from "../vet-search/vet-search";
 import { ApiProvider } from "../../providers/api/api";
+import { VeterinaryPage } from "../veterinary/veterinary";
 
 @Component({
   selector: "page-home",
@@ -87,5 +88,9 @@ export class HomePage {
     } else {
       this.view = "map";
     }
+  }
+
+  openTab(vet) {
+    this.navCtrl.push(VeterinaryPage, { veterinary: vet }, { animation: "ios" });
   }
 }
