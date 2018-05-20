@@ -11,8 +11,6 @@
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
     "build-android": "cordova build android --release -- --password=gab23gab --keystore='./findvet.jks' --storePassword=gab23gab --alias=findvet"
-
-
   },
   "dependencies": {
     "@angular/animations": "5.2.10",
