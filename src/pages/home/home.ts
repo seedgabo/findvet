@@ -1,9 +1,10 @@
 import { Component } from "@angular/core";
 import { NavController, PopoverController, ModalController } from "ionic-angular";
-import { latLng, tileLayer, marker, divIcon, Marker } from "leaflet";
+import { latLng, tileLayer, marker, divIcon, Marker, Map } from "leaflet";
 import { VetPage } from "../vet/vet";
-import veterinaries from "../../vets";
+
 import { VetSearchPage } from "../vet-search/vet-search";
+import { ApiProvider } from "../../providers/api/api";
 
 @Component({
   selector: "page-home",
@@ -24,8 +25,7 @@ export class HomePage {
     center: latLng(4.7958225, -74.0925652)
   };
   layers = [];
-  vets = veterinaries;
-  constructor(public navCtrl: NavController, public popover: PopoverController, public modal: ModalController) {}
+  constructor(public navCtrl: NavController, public popover: PopoverController, public modal: ModalController, public api: ApiProvider) {}
 
   ionViewDidLoad() {
     setTimeout(() => {
@@ -33,12 +33,18 @@ export class HomePage {
     }, 1000);
   }
 
+  onMapReady(map: Map) {
+    map.locate({ setView: true, maxZoom: 11 });
+  }
+
   addPanel(mark: Marker, vet) {
     this.options.center = mark.getLatLng();
     this.popover
       .create(
         VetPage,
-        {},
+        {
+          vet: vet
+        },
         {
           cssClass: "vet-panel"
         }
@@ -47,7 +53,7 @@ export class HomePage {
   }
 
   addVeterinaries() {
-    this.vets.forEach((vet) => {
+    this.api.vets.forEach((vet) => {
       var html = `
         <div>
           <img src="./assets/imgs/pet-marker.png">
@@ -58,7 +64,7 @@ export class HomePage {
         className: "vet-marker",
         html: html
       });
-      var mark = marker([4.7958225 + Math.random() / 5, -74.0925652 + Math.random() / 5], { icon: ico });
+      var mark = marker([vet.latlng.lat, vet.latlng.lng], { icon: ico });
       mark.on("click", () => {
         this.addPanel(mark, vet);
       });
@@ -74,6 +80,7 @@ export class HomePage {
       }
     });
   }
+
   toggle() {
     if (this.view == "map") {
       this.view = "list";

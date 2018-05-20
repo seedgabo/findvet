@@ -1,24 +1,18 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the VeterinaryPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+import { Component } from "@angular/core";
+import { NavController, NavParams } from "ionic-angular";
 @Component({
-  selector: 'page-veterinary',
-  templateUrl: 'veterinary.html',
+  selector: "page-veterinary",
+  templateUrl: "veterinary.html"
 })
 export class VeterinaryPage {
-
+  veterinary: any = {};
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.veterinary = this.navParams.get("veterinary");
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad VeterinaryPage');
+  openMap() {
+    window.open(`geo:${this.veterinary.latlng.lat},${this.veterinary.latlng.lng},17`);
   }
 
+  ionViewDidLoad() {}
 }

@@ -1,9 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      <ion-icon name="search"></ion-icon>
-      Buscar
-    </ion-title>
+    <ion-searchbar [(ngModel)]="query" (ionChange)="filter()" [debounce]="700"></ion-searchbar>
     <ion-buttons end>
       <button ion-button clear icon-only (click)="dismiss()">
         <ion-icon name="close"></ion-icon>
@@ -13,26 +10,38 @@
 </ion-header>
 
 
-<ion-content>
-  <ion-searchbar></ion-searchbar>
+<ion-content class="container">
   <ion-card no-padding>
     <ion-list>
       <ion-item>
         <ion-icon item-left color="primary" name="paw"></ion-icon>
         <ion-label>Veterinarias</ion-label>
-        <ion-toggle checked></ion-toggle>
+        <ion-toggle (ionChange)="filter()" [(ngModel)]="veterinarias"></ion-toggle>
       </ion-item>
       <ion-item>
         <ion-icon item-left color="primary" name="pricetags"></ion-icon>
         <ion-label>Tiendas</ion-label>
-        <ion-toggle checked></ion-toggle>
+        <ion-toggle (ionChange)="filter()" [(ngModel)]="tiendas"></ion-toggle>
       </ion-item>
       <ion-item>
         <ion-icon item-left color="primary" name="medical"></ion-icon>
         <ion-label>Atencion Medica</ion-label>
-        <ion-toggle checked></ion-toggle>
+        <ion-toggle (ionChange)="filter()" [(ngModel)]="medicina"></ion-toggle>
       </ion-item>
       <hr>
     </ion-list>
   </ion-card>
+
+
+  <ion-list [virtualScroll]="vets">
+    <button (click)="select(vet)" ion-item *virtualItem="let vet">
+      <ion-avatar item-left>
+        <img [src]="vet.img" alt="">
+      </ion-avatar>
+      <h2> {{vet.name}} </h2>
+      <p>
+        <span *ngFor="let cat of vet.categories">{{ cat }}, </span>
+      </p>
+    </button>
+  </ion-list>
 </ion-content>

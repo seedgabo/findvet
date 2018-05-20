@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { NavController, ViewController } from "ionic-angular";
+import { NavController, ViewController, NavParams } from "ionic-angular";
 import { VeterinaryPage } from "../veterinary/veterinary";
 @Component({
   selector: "page-vet",
@@ -18,7 +18,9 @@ export class VetPage {
     website: "http://itsdoge.com",
     rate: 5
   };
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController) {}
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public navParams: NavParams) {
+    this.vet = this.navParams.get("vet");
+  }
   ionViewDidLoad() {}
 
   dismiss() {
