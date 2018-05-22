@@ -5,7 +5,6 @@ import { VetPage } from "../vet/vet";
 
 import { VetSearchPage } from "../vet-search/vet-search";
 import { ApiProvider } from "../../providers/api/api";
-import { VeterinaryPage } from "../veterinary/veterinary";
 
 @Component({
   selector: "page-home",
@@ -28,8 +27,6 @@ export class HomePage {
   };
   layers = [];
 
-  cat = null;
-  filtered = [];
   constructor(public navCtrl: NavController, public popover: PopoverController, public modal: ModalController, public api: ApiProvider) {}
 
   ionViewDidLoad() {
@@ -95,13 +92,10 @@ export class HomePage {
   }
 
   selectCat(cat) {
-    this.cat = cat;
-    this.filtered = this.api.vets.filter((vet) => {
+    var filtered = this.api.vets.filter((vet) => {
       return vet.categories.indexOf(cat.key) > -1;
     });
-  }
 
-  openTab(vet) {
-    this.navCtrl.push(VeterinaryPage, { veterinary: vet }, { animation: "ios" });
+    this.navCtrl.push("InCategoryPage", { category: cat, veterinaries: filtered }, { animation: "ios" });
   }
 }

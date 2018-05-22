@@ -19,7 +19,15 @@ import { IonicStorageModule } from "@ionic/storage";
 
 @NgModule({
   declarations: [MyApp, HomePage, ProfilePage, VetPage, VeterinaryPage, VetSearchPage],
-  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp), LeafletModule.forRoot(), IonicStorageModule.forRoot()],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    IonicModule.forRoot(MyApp, {
+      pageTransition: "ios-transition"
+    }),
+    LeafletModule.forRoot(),
+    IonicStorageModule.forRoot()
+  ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, HomePage, ProfilePage, VetPage, VeterinaryPage, VetSearchPage],
   providers: [StatusBar, SplashScreen, { provide: ErrorHandler, useClass: IonicErrorHandler }, ApiProvider]

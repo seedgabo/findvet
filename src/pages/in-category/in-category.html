@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="favorite">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{category.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button (click)="openTab(vet)" ion-item *ngFor="let vet of api.vets">
+      <ion-thumbnail item-left>
+        <img [src]="vet.img" alt="">
+      </ion-thumbnail>
+      <h2>{{vet.name}}</h2>
+      <h4 text-wrap>{{vet.description}}</h4>
+      <p text-wrap>{{ vet.address }}}</p>
+    </button>
+  </ion-list>
+
+</ion-content>
