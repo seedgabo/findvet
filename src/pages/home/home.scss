@@ -63,3 +63,17 @@ page-home {}
     border-radius: 0 10px 10px 0;
   }
 }
+
+.cat-card {
+  height: 100px;
+  h1 {
+    color: color($colors, "primary");
+    font-size: 21px;
+  }
+  p {
+    color: color($colors, "favorite");
+  }
+  img {
+    height: 50px;
+  }
+}

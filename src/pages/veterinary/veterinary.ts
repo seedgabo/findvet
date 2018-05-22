@@ -11,7 +11,7 @@ export class VeterinaryPage {
   }
 
   openMap() {
-    window.open(`geo:${this.veterinary.latlng.lat},${this.veterinary.latlng.lng},17`);
+    window.open(`geo:${this.veterinary.latlng.lat},${this.veterinary.latlng.lng}`);
   }
 
   ionViewDidLoad() {}

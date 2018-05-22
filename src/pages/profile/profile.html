@@ -1,28 +1,97 @@
 <ion-header>
-  <ion-navbar color="favorite">
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Perfil</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear (click)="logout()" *ngIf="api.user">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content class="login-container container">
-  <img src="./assets/imgs/icon.png" class="login-logo">
-  <ion-card text-center class="card-login">
-    <ion-item>
-      <ion-label floating>Email</ion-label>
-      <ion-input type="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating>Contrasena</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-    <button ion-button color="primary" block>
-      Iniciar Sesion
-    </button>
-    <button ion-button color="favorite" outline block>
-      Registrarse
-    </button>
-  </ion-card>
+<ion-content>
+  <div *ngIf="!api.user" style="height:100%" class="login-container container">>
+
+    <img src="./assets/imgs/icon.png" class="login-logo">
+    <ion-card text-center class="card-login">
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input [(ngModel)]="username" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Contrasena</ion-label>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>
+
+      </ion-item>
+      <button [disabled]="!canLogin()" ion-button (click)="login()" color="primary" block>
+        Iniciar Sesion
+      </button>
+      <button [disabled]="!canLogin()" ion-button (click)="login()" color="favorite" outline block>
+        Registrarse
+      </button>
+    </ion-card>
+  </div>
+
+  <div *ngIf="api.user">
+    <ion-card color="secondary">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3>
+            <img src="https://cdn0.iconfinder.com/data/icons/characters-2-2-filled/223/wolf-dog-animal-character-avatar-smileface-profile-128.png"
+              style="height:65px; width:65px; border-radius:50%">
+          </ion-col>
+          <ion-col col-9>
+            <h2>{{api.user.username}}</h2>
+            <p>{{api.user.name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12>
+          <ion-card>
+            <ion-list-header color="primary">
+              <ion-icon name="paw" item-left></ion-icon>
+              <h2 ion-text color="light">
+                Mascotas
+              </h2>
+            </ion-list-header>
+
+            <ion-list>
+              <ion-item-sliding *ngFor="let pet of api.user.pets; let i = index">
+                <ion-item>
+                  <ion-thumbnail item-left>
+                    <img src="https://pbs.twimg.com/profile_images/549561819010854912/AJonc96g.png">
+                  </ion-thumbnail>
+                  <h2>{{pet.name}}</h2>
+                  <h4>{{pet.specie}}</h4>
+                  <h5>{{pet.breed}}</h5>
+
+                </ion-item>
+                <ion-item-options side="right">
+                  <button ion-button color="danger" (click)="removePet(pet,i)">
+                    <ion-icon name="trash"></ion-icon>
+                    Eliminar
+                  </button>
+                </ion-item-options>
+              </ion-item-sliding>
+            </ion-list>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-fab bottom right>
+      <button ion-fab (click)="addPet()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-fab>
+  </div>
+
+
 </ion-content>

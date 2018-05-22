@@ -12,10 +12,11 @@ import { VeterinaryPage } from "../veterinary/veterinary";
   templateUrl: "home.html"
 })
 export class HomePage {
-  view = "map";
+  view = "list";
   options = {
     layers: [
-      tileLayer("https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}", {
+      // tileLayer("https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}", {
+      tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 18,
         minZoom: 3,
         attribution: "."
@@ -26,6 +27,9 @@ export class HomePage {
     center: latLng(4.7958225, -74.0925652)
   };
   layers = [];
+
+  cat = null;
+  filtered = [];
   constructor(public navCtrl: NavController, public popover: PopoverController, public modal: ModalController, public api: ApiProvider) {}
 
   ionViewDidLoad() {
@@ -88,6 +92,13 @@ export class HomePage {
     } else {
       this.view = "map";
     }
+  }
+
+  selectCat(cat) {
+    this.cat = cat;
+    this.filtered = this.api.vets.filter((vet) => {
+      return vet.categories.indexOf(cat.key) > -1;
+    });
   }
 
   openTab(vet) {

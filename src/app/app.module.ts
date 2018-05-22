@@ -15,10 +15,11 @@ import { VetSearchPage } from "../pages/vet-search/vet-search";
 import { VeterinaryPage } from "../pages/veterinary/veterinary";
 import { ApiProvider } from "../providers/api/api";
 import { HttpClientModule } from "@angular/common/http";
+import { IonicStorageModule } from "@ionic/storage";
 
 @NgModule({
   declarations: [MyApp, HomePage, ProfilePage, VetPage, VeterinaryPage, VetSearchPage],
-  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp), LeafletModule.forRoot()],
+  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp), LeafletModule.forRoot(), IonicStorageModule.forRoot()],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, HomePage, ProfilePage, VetPage, VeterinaryPage, VetSearchPage],
   providers: [StatusBar, SplashScreen, { provide: ErrorHandler, useClass: IonicErrorHandler }, ApiProvider]

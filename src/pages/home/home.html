@@ -23,16 +23,42 @@
   </div>
 
   <div style="height: 100%" [hidden]="view != 'list'">
-    <ion-list>
-      <button (click)="openTab(vet)" ion-item *ngFor="let vet of api.vets">
+    <ion-grid *ngIf="!cat">
+      <ion-row no-padding wrap>
+        <ion-col no-padding *ngFor="let cat of api._categories" col-12 col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12>
+          <ion-card (click)="selectCat(cat)" no-padding class="cat-card" text-center>
+            <ion-item>
+              <ion-thumbnail item-left>
+                <img [src]="cat.img">
+              </ion-thumbnail>
+              <h1 text-wrap>
+                {{ cat.name }}
+              </h1>
+              <p text-wrap>
+                {{cat.text}}
+              </p>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
+    <ion-list *ngIf="cat">
+      <button ion-button icon-left clear color="primary" (click)="cat = null">
+        <ion-icon name="arrow-back"></ion-icon>
+        Atras
+      </button>
+      <button (click)="openTab(vet)" ion-item *ngFor="let vet of api.vets">
         <ion-thumbnail item-left>
           <img [src]="vet.img" alt="">
         </ion-thumbnail>
         <h2>{{vet.name}}</h2>
-        <p text-wrap>{{vet.description}}</p>
+        <h4 text-wrap>{{vet.description}}</h4>
+        <p text-wrap>{{ vet.address }}}</p>
       </button>
     </ion-list>
+
+    <div style="height:100px">&nbsp;</div>
   </div>
 
   <div class="geofence-bottom-buttons">

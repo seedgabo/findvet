@@ -34,13 +34,13 @@ export class VetSearchPage {
   }
 
   byCategory(item) {
-    if (this.veterinarias && item.categories.indexOf("veterinaria") > -1) {
+    if (this.veterinarias && item.categories.indexOf("consulta veterinaria") > -1) {
       return true;
     }
-    if (this.tiendas && item.categories.indexOf("tienda") > -1) {
+    if (this.tiendas && item.categories.indexOf("pet shop") > -1) {
       return true;
     }
-    if (this.medicina && item.categories.indexOf("medicina") > -1) {
+    if (this.medicina && item.categories.indexOf("farmacia") > -1) {
       return true;
     }
 

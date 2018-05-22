@@ -9,7 +9,7 @@ export default [
     phone_number: "6103104",
     rate: 0,
     latlng: { lat: 4.687484, lng: -74.0784845 },
-    categories: ["veterinaria"],
+    categories: ["consulta veterinaria"],
     services: [
       "exámenes diagnósticos",
       "médicos especialistas",
@@ -34,7 +34,7 @@ export default [
     website: "dover.com.co",
     rate: 4.5,
     latlng: { lat: 4.7017656, lng: -74.0320396 },
-    categories: ["veterinaria", "medicina"],
+    categories: ["consulta veterinaria"],
     services: [
       "consulta especializada",
       "odontología",
@@ -57,7 +57,7 @@ export default [
     website: "dover.com.co",
     rate: 0,
     latlng: { lat: 4.7017361, lng: -74.0322143 },
-    categories: ["veterinaria", "tienda"],
+    categories: ["peluqueria", "hotel", "colegio", "pet shop"],
     services: ["belleza", "hotel y colegio", "servicio funerarios", "certificados y asesorías para viaje", "microchip e identificación"]
   },
   {
@@ -71,11 +71,11 @@ export default [
     website: "dover.com.co",
     rate: 4.8,
     latlng: { lat: 4.7269897, lng: -74.0826546 },
-    categories: ["veterinaria", "medicina"],
+    categories: ["consulta veterinaria"],
     services: ["consulta general", "vacunación", "cirugía", "hospitalización", "laboratorio clínico", "anestesia"]
   },
   {
-    name: "Animals Center",
+    name: "Animals Center Boyaca",
     color: "#3C46cc",
     address: "Av Boyaca #64-79 Bogota",
     schedule: "lunes a sabado 9:00am -20:00pm, domingo 9:00am-18:00pm",
@@ -85,7 +85,7 @@ export default [
     website: "",
     rate: 3.8,
     latlng: { lat: 4.6780421, lng: -74.1041223 },
-    categories: ["veterinaria", "medicina"],
+    categories: ["consulta veterinaria", "guarderia", "farmacia", "peluqueria"],
     services: ["consulta general", "guarderia", "cirugía", "medicamentos", "laboratorio clínico", "odontologia", "sala de belleza"]
   },
   {
@@ -99,7 +99,7 @@ export default [
     website: "",
     rate: 4.0,
     latlng: { lat: 4.60337, lng: -74.1560699 },
-    categories: ["veterinaria", "medicina"],
+    categories: ["consulta veterinaria", "guarderia", "farmacia", "peluqueria"],
     services: ["consulta general", "guarderia", "cirugía", "medicamentos", "laboratorio clínico", "odontologia", "sala de belleza"]
   },
   {
@@ -113,7 +113,7 @@ export default [
     website: "",
     rate: 4.4,
     latlng: { lat: 4.6447761, lng: -74.0678458 },
-    categories: ["veterinaria", "medicina"],
+    categories: ["consulta veterinaria"],
     services: ["consulta general", "hospitalizacion", "rayos x", "ecografia", "urgencias 24 horas"]
   },
   {
@@ -127,7 +127,7 @@ export default [
     website: "zoovida.com.co",
     rate: 2.2,
     latlng: { lat: 4.6875666, lng: -74.0484776 },
-    categories: ["veterinaria", "medicina"],
+    categories: ["consulta veterinaria", "farmacia", "peluqueria", "pet shop"],
     services: [
       "hospitallizacion",
       "laboratorio clinico",
@@ -150,7 +150,7 @@ export default [
     website: "zoovetclinicaveterinaria.com",
     rate: 0,
     latlng: { lat: 4.6103274, lng: -74.1118773 },
-    categories: ["veterinaria", "medicina"],
+    categories: ["consulta veterinaria", "farmacia", "peluqueria", "pet shop", "guarderia"],
     services: [
       "consulta general",
       "laboratorio clinico",
@@ -177,7 +177,7 @@ export default [
     website: "",
     rate: 4.7,
     latlng: { lat: 4.695431, lng: -74.0363667 },
-    categories: ["veterinaria", "medicina"],
+    categories: ["consulta veterinaria"],
     services: ["consulta general", "ortopedia", "hospitalizacion", "urgencias", "imagenologia", "laboratorio clinico"]
   },
   {
@@ -191,7 +191,7 @@ export default [
     website: "",
     rate: 4.2,
     latlng: { lat: 4.6695955, lng: -74.1049645 },
-    categories: ["veterinaria", "medicina"],
+    categories: ["consulta veterinaria"],
     services: ["consulta general", "laboratorio clinico", "consulta especializada", "vacunacion", "ortopedia", "urgencias", "cirugias"]
   },
   {
@@ -205,7 +205,7 @@ export default [
     website: "clinisur.org",
     rate: 3.8,
     latlng: { lat: 4.581972, lng: -74.1038337 },
-    categories: ["veterinaria", "medicina"],
+    categories: ["consulta veterinaria", "pet shop", "guarderia"],
     services: [
       "consulta general",
       "laboratorio clinico",
@@ -230,7 +230,7 @@ export default [
     website: "www.animalbull.co",
     rate: 4.3,
     latlng: { lat: 4.6610386, lng: -74.082249 },
-    categories: ["veterinaria", "medicina"],
+    categories: ["consulta veterinaria", "pet shop", "guarderia", "farmacia", "peluqueria"],
     services: [
       "consulta general",
       "laboratorio clinico",
@@ -260,7 +260,7 @@ export default [
     website: "cpvet.co",
     rate: 4.9,
     latlng: { lat: 4.7061406, lng: -74.1168668 },
-    categories: ["veterinaria", "medicina"],
+    categories: ["consulta veterinaria", "guarderia"],
     services: ["consulta general", "laboratorio clinico", "vacunacion", "cirugias", "imagenologia", "guarderia"]
   },
   {
@@ -274,7 +274,7 @@ export default [
     website: "",
     rate: 5.0,
     latlng: { lat: 4.717447, lng: -74.0487776 },
-    categories: ["veterinaria", "medicina"],
+    categories: ["consulta veterinaria", "guarderia", "farmacia"],
     services: ["consulta general", "laboratorio clinico", "vacunacion", "cirugias", "imagenologia", "guarderia", "farmacia"]
   },
   {
@@ -288,7 +288,7 @@ export default [
     website: "orthovet.com.co",
     rate: 4.8,
     latlng: { lat: 4.7020318, lng: -74.0614594 },
-    categories: ["veterinaria", "medicina"],
+    categories: ["consulta veterinaria", "guarderia"],
     services: ["consulta general", "laboratorio clinico", "vacunacion", "cirugias", "imagenologia", "guarderia", "consulta especializada"]
   }
 ];
