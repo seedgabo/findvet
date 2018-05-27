@@ -1,6 +1,6 @@
 export default [
   {
-    name: "VET PLUS",
+    name: "vet plus",
     color: "#3C46cc",
     address: "Calle 49 #99-29",
     schedule: "24 Horas",
@@ -26,7 +26,7 @@ export default [
     ]
   },
   {
-    name: "Clínica Dover S.A.S",
+    name: "clínica dover s.a.s",
     color: "#3C46cc",
     address: "Calle 126a #7-98, Bogotá",
     schedule: "24 Horas",
@@ -49,7 +49,7 @@ export default [
     ]
   },
   {
-    name: "Dover Pet Center",
+    name: "dover pet center",
     color: "#3C46cc",
     address: "Cra. 7 a #126 A - 31, Bogotá",
     schedule: "lunes a sabado 8:00am-19:00pm",
@@ -63,7 +63,7 @@ export default [
     services: ["belleza", "hotel y colegio", "servicio funerarios", "certificados y asesorías para viaje", "microchip e identificación"]
   },
   {
-    name: "Dover Colina",
+    name: "dover colina",
     color: "#3C46cc",
     address: "Carrera 58 # 137 A – 16 bogota ",
     schedule: "lunes a sabado 8:00am-18:00pm",
@@ -77,7 +77,7 @@ export default [
     services: ["consulta general", "vacunación", "cirugía", "hospitalización", "laboratorio clínico", "anestesia"]
   },
   {
-    name: "Animals Center Boyaca",
+    name: "animals center boyaca",
     color: "#3C46cc",
     address: "Av Boyaca #64-79 Bogota",
     schedule: "lunes a sabado 9:00am -20:00pm, domingo 9:00am-18:00pm",
@@ -91,7 +91,7 @@ export default [
     services: ["consulta general", "guarderia", "cirugía", "medicamentos", "laboratorio clínico", "odontologia", "sala de belleza"]
   },
   {
-    name: "Animals Center",
+    name: "animals center",
     color: "#3C46cc",
     address: "cr 50 #22-45 sur bogota",
     schedule: "lunes a sabado 9:00am -19:00pm, domingo 9:00am-18:00pm",
@@ -105,7 +105,7 @@ export default [
     services: ["consulta general", "guarderia", "cirugía", "medicamentos", "laboratorio clínico", "odontologia", "sala de belleza"]
   },
   {
-    name: "Tu hospital veterinario",
+    name: "tu hospital veterinario",
     color: "#3C46cc",
     address: "av caracas #58-05 bogota",
     schedule: "",
@@ -222,7 +222,7 @@ export default [
     ]
   },
   {
-    name: "Animal Bull",
+    name: "animal bull",
     color: "#3C46cc",
     address: " 64A #50b-34",
     schedule: "lunes a sabado 9:00am-19:00pm",
@@ -292,5 +292,98 @@ export default [
     latlng: { lat: 4.7020318, lng: -74.0614594 },
     categories: ["consulta veterinaria", "guarderia"],
     services: ["consulta general", "laboratorio clinico", "vacunacion", "cirugias", "imagenologia", "guarderia", "consulta especializada"]
+  },
+  {
+    name: "TheCamPets",
+    color: "#3C46cc",
+    address: "Calle 172 # 24 ",
+    schedule: "",
+    img: "./assets/imgs/pet-marker.png",
+    description: "escuela",
+    phone_number: "3102684430",
+    rate: 4,
+    latlng: { lat: 4.778067, lng: -74.0934617 },
+    categories: ["urgencias", "hotel", "colegio", "peluqueria"],
+    services: [
+      "transporte puerta a puerta",
+      "hotel",
+      "colegio",
+      "peluquería",
+      "adiestramiento",
+      "asistencia médicas",
+      "emergencias",
+      "consulta general",
+      "recreación",
+      "guarderia"
+    ]
+  },
+  {
+    name: "Agrocampo",
+    color: "#3C46cc",
+    address: "Calle 73 # 20-62 ",
+    schedule:
+      " Lunes 7: 30am a 19:00 pm Martes 7: 30am a 19: 00pm Miércoles 7: 30am a 19: 00pm Jueves  7: 30am a 19: 00pm Viernes 7: 30am a 19: 00pm Sábados 7: 30 a 19: 30 Domingos cerrado  ",
+    img: "./assets/imgs/pet-marker.png",
+    description: "tienda de alimentos para animales",
+    phone_number: "3265999",
+    rate: 4,
+    latlng: { lat: 4.6618217, lng: -74.0641853 },
+    categories: ["pet shop", "farmacia"],
+    services: ["farmacia", "pet shop"]
+  },
+  {
+    name: "Ceba Mascotas",
+    color: "#3C46cc",
+    address: "72 A AK # 14-47 ",
+    schedule:
+      "Lunes 7:30am a 07:30pm Martes 07:30am a 07:30pm, Miércoles 07:30am a 07:30pm, Jueves 07:30am a 07:30 pm Viernes 07:30am a 07:30pm Sábados 07:30am a 08:00pm Domingos cerrado ",
+    img: "./assets/imgs/pet-marker.png",
+    description: "tienda de productos para mascotas",
+    phone_number: "3269500",
+    rate: 4,
+    latlng: { lat: 4.6608237, lng: -74.0640519 },
+    categories: ["pet shop", "farmacia"],
+    services: ["farmacia", "pet shop"]
+  },
+  {
+    name: "La Res Clinica Veterinaria",
+    color: "#3C46cc",
+    address: " Autopista Nte # 106 b - 66 ",
+    schedule:
+      " Lunes  8:00am a 07:00pm Martes 8:00am a 07: 00pm Miercoles 8:00am a 07: 00pm Jueves 8:00am a 07: 00pm Viernes 8:00am a 07: 00pm Sábado 8:00am a 07: 00pm Domingos cerrado  ",
+    img: "./assets/imgs/pet-marker.png",
+    description: "tienda de productos para mascotas",
+    phone_number: "3269500",
+    rate: 4,
+    latlng: { lat: 4.6952561, lng: 74.0640143 },
+    categories: ["pet shop", "farmacia"],
+    services: [" farmacia", "pet shop", "consulta general", " consultas especializadas", "ortopedia", "cardiología", "homeopatía"]
+  },
+  {
+    name: "Puppy Export Tienda Para Mascotas Sede Sur",
+    color: "#3C46cc",
+    address: "calle 38 a sur # 34 a - 04 ",
+    schedule:
+      "Lunes 8:00am a 08:00pm Martes 8: 00am a 08: 00pm Miercoles 8: 00am a 08: 00pm Jueves 8: 00am a 08: 00pm Viernes 8: 00am a 08: 00pm Sábado 8: 00am a 08: 00pm Domingo 8: 00am a 08: 00pm ",
+    img: "./assets/imgs/pet-marker.png",
+    description: "tienda de productos para mascotas",
+    phone_number: "4660989",
+    rate: 4,
+    latlng: { lat: 4.5942799, lng: -74.1387244 },
+    categories: ["pet shop", "peluqueria", "consulta veterinaria"],
+    services: ["pet shop", "tienda", "concentrados", "peluquería", "consulta veterinaria", "criadero de cachorros"]
+  },
+  {
+    name: "Puppy Land Colombia",
+    color: "#3C46cc",
+    address: "calle 61 b  # 4 b este - 1 a  4b este - 83  ",
+    schedule: "abierto las 24 horas ",
+    img: "./assets/imgs/pet-marker.png",
+    description: "guardería canina",
+    phone_number: "3115170330",
+    rate: 5,
+    latlng: { lat: 4.6413318, lng: 74.0791579 },
+    categories: ["guardería", "peluqueria", "hotel", "consulta veterinaria"],
+    services: ["peluquería", "consulta veterinaria", "guardería", "hotel"]
   }
 ];
