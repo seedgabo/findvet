@@ -4,7 +4,7 @@ import { VeterinaryPage } from "../veterinary/veterinary";
 import { ApiProvider } from "../../providers/api/api";
 import { HomePage } from "../home/home";
 @IonicPage({
-  segment: "category/{category}"
+  segment: "category"
 })
 @Component({
   selector: "page-in-category",

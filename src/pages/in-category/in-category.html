@@ -10,13 +10,17 @@
 
 <ion-content padding>
   <ion-list>
-    <button (click)="openTab(vet)" ion-item *ngFor="let vet of veterinaries">
-      <ion-thumbnail item-left>
+    <button (click)="openTab(vet)" ion-item *ngFor="let vet of veterinaries | orderBy:'distance' ">
+      <ion-avatar item-left>
         <img [src]="vet.img" alt="">
-      </ion-thumbnail>
+      </ion-avatar>
       <h2>{{vet.name}}</h2>
       <h4 text-wrap>{{vet.description}}</h4>
-      <p text-wrap>{{ vet.address }}}</p>
+      <p text-wrap>{{ vet.address }}</p>
+      <p item-right>
+        {{ (vet.distance / 1000) | number:'0.1-1' }} Km
+        <ion-icon xxxitem-left name="md-navigate" [ngStyle]="{'transform': 'rotateZ(' + vet.heading + 'deg)'}"></ion-icon>
+      </p>
     </button>
   </ion-list>
 

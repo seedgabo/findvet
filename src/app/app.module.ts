@@ -16,6 +16,8 @@ import { VeterinaryPage } from "../pages/veterinary/veterinary";
 import { ApiProvider } from "../providers/api/api";
 import { HttpClientModule } from "@angular/common/http";
 import { IonicStorageModule } from "@ionic/storage";
+import { Geolocation } from "@ionic-native/geolocation";
+import { OrderModule } from "ngx-order-pipe";
 
 @NgModule({
   declarations: [MyApp, HomePage, ProfilePage, VetPage, VeterinaryPage, VetSearchPage],
@@ -26,10 +28,11 @@ import { IonicStorageModule } from "@ionic/storage";
       pageTransition: "ios-transition"
     }),
     LeafletModule.forRoot(),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    OrderModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, HomePage, ProfilePage, VetPage, VeterinaryPage, VetSearchPage],
-  providers: [StatusBar, SplashScreen, { provide: ErrorHandler, useClass: IonicErrorHandler }, ApiProvider]
+  providers: [StatusBar, SplashScreen, { provide: ErrorHandler, useClass: IonicErrorHandler }, ApiProvider, Geolocation]
 })
 export class AppModule {}

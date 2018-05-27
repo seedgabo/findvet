@@ -9,7 +9,7 @@ export default [
     phone_number: "6103104",
     rate: 0,
     latlng: { lat: 4.687484, lng: -74.0784845 },
-    categories: ["consulta veterinaria"],
+    categories: ["consulta veterinaria", "urgencias"],
     services: [
       "exámenes diagnósticos",
       "médicos especialistas",
@@ -34,7 +34,7 @@ export default [
     website: "dover.com.co",
     rate: 4.5,
     latlng: { lat: 4.7017656, lng: -74.0320396 },
-    categories: ["consulta veterinaria"],
+    categories: ["consulta veterinaria", "urgencias"],
     services: [
       "consulta especializada",
       "odontología",
@@ -113,7 +113,7 @@ export default [
     website: "",
     rate: 4.4,
     latlng: { lat: 4.6447761, lng: -74.0678458 },
-    categories: ["consulta veterinaria"],
+    categories: ["consulta veterinaria", "urgencias"],
     services: ["consulta general", "hospitalizacion", "rayos x", "ecografia", "urgencias 24 horas"]
   },
   {
@@ -127,7 +127,7 @@ export default [
     website: "zoovida.com.co",
     rate: 2.2,
     latlng: { lat: 4.6875666, lng: -74.0484776 },
-    categories: ["consulta veterinaria", "farmacia", "peluqueria", "pet shop"],
+    categories: ["consulta veterinaria", "farmacia", "peluqueria", "pet shop", "urgencias"],
     services: [
       "hospitallizacion",
       "laboratorio clinico",
@@ -150,7 +150,7 @@ export default [
     website: "zoovetclinicaveterinaria.com",
     rate: 0,
     latlng: { lat: 4.6103274, lng: -74.1118773 },
-    categories: ["consulta veterinaria", "farmacia", "peluqueria", "pet shop", "guarderia"],
+    categories: ["consulta veterinaria", "farmacia", "peluqueria", "pet shop", "guarderia", "urgencias"],
     services: [
       "consulta general",
       "laboratorio clinico",
@@ -177,7 +177,7 @@ export default [
     website: "",
     rate: 4.7,
     latlng: { lat: 4.695431, lng: -74.0363667 },
-    categories: ["consulta veterinaria"],
+    categories: ["consulta veterinaria", "urgencias"],
     services: ["consulta general", "ortopedia", "hospitalizacion", "urgencias", "imagenologia", "laboratorio clinico"]
   },
   {
@@ -191,7 +191,7 @@ export default [
     website: "",
     rate: 4.2,
     latlng: { lat: 4.6695955, lng: -74.1049645 },
-    categories: ["consulta veterinaria"],
+    categories: ["consulta veterinaria", "urgencias"],
     services: ["consulta general", "laboratorio clinico", "consulta especializada", "vacunacion", "ortopedia", "urgencias", "cirugias"]
   },
   {
@@ -230,7 +230,7 @@ export default [
     website: "www.animalbull.co",
     rate: 4.3,
     latlng: { lat: 4.6610386, lng: -74.082249 },
-    categories: ["consulta veterinaria", "pet shop", "guarderia", "farmacia", "peluqueria"],
+    categories: ["consulta veterinaria", "pet shop", "guarderia", "farmacia", "peluqueria", "urgencias"],
     services: [
       "consulta general",
       "laboratorio clinico",

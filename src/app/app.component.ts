@@ -5,6 +5,9 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 
 import { HomePage } from "../pages/home/home";
 import { ProfilePage } from "../pages/profile/profile";
+import { ApiProvider } from "../providers/api/api";
+
+import { Geolocation } from "@ionic-native/geolocation";
 
 @Component({
   templateUrl: "app.html"
@@ -15,8 +18,13 @@ export class MyApp {
   rootPage: any = HomePage;
 
   pages: Array<{ title: string; component: any; icon: string }>;
-
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public api: ApiProvider,
+    public geo: Geolocation
+  ) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -29,10 +37,21 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.geo
+        .getCurrentPosition()
+        .then((loc) => {
+          console.log(loc);
+          this.api.loc = loc;
+          this.api.vets.forEach((vet: any) => {
+            vet.distance = this.api.getDistanceFromLatLon(loc.coords.latitude, loc.coords.longitude, vet.latlng.lat, vet.latlng.lng);
+            vet.heading = this.api.bearing(loc.coords.latitude, loc.coords.longitude, vet.latlng.lat, vet.latlng.lng);
+          });
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     });
   }
 
