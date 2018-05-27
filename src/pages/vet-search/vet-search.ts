@@ -12,9 +12,18 @@ export class VetSearchPage {
   veterinarias = true;
   tiendas = true;
   medicina = true;
+  services = [];
+  activeServices = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewctrl: ViewController, public api: ApiProvider) {}
 
   ionViewDidLoad() {
+    this.api.vets.forEach((vet) => {
+      vet.services.forEach((serv) => {
+        if (this.services.indexOf(serv) == -1) {
+          this.services.push(serv);
+        }
+      });
+    });
     this.filter();
   }
 

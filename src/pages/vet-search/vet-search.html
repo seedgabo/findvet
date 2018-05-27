@@ -13,7 +13,12 @@
 <ion-content class="container">
   <ion-card no-padding>
     <ion-list>
-      <ion-item>
+      <ion-item *ngFor="let serv of services">
+        <ion-icon item-left color="primary" name="paw"></ion-icon>
+        <ion-label>{{serv}}</ion-label>
+        <ion-toggle (ionChange)="filter()" [(ngModel)]="'activeServices'[serv]"></ion-toggle>
+      </ion-item>
+      <!-- <ion-item>
         <ion-icon item-left color="primary" name="paw"></ion-icon>
         <ion-label>Veterinarias</ion-label>
         <ion-toggle (ionChange)="filter()" [(ngModel)]="veterinarias"></ion-toggle>
@@ -27,7 +32,7 @@
         <ion-icon item-left color="primary" name="medical"></ion-icon>
         <ion-label>Atencion Medica</ion-label>
         <ion-toggle (ionChange)="filter()" [(ngModel)]="medicina"></ion-toggle>
-      </ion-item>
+      </ion-item> -->
       <hr>
     </ion-list>
   </ion-card>
