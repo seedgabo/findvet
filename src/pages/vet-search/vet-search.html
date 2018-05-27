@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <ion-searchbar [(ngModel)]="query" (ionChange)="filter()" [debounce]="700"></ion-searchbar>
     <ion-buttons end>
       <button ion-button clear icon-only (click)="dismiss()">
@@ -39,8 +39,12 @@
         <img [src]="vet.img" alt="">
       </ion-avatar>
       <h2 text-capitalize> {{vet.name}} </h2>
+      <p item-right>
+        {{ (vet.distance / 1000) | number:'0.1-1' }} Km
+        <ion-icon xxxitem-left name="md-navigate" [ngStyle]="{'transform': 'rotateZ(' + vet.heading + 'deg)'}"></ion-icon>
+      </p>
 
-      <p>
+      <p text-wrap>
         <span *ngFor="let cat of vet.categories">{{ cat }}, </span>
       </p>
     </button>
