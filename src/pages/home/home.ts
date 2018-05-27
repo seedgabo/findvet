@@ -5,6 +5,7 @@ import { VetPage } from "../vet/vet";
 
 import { VetSearchPage } from "../vet-search/vet-search";
 import { ApiProvider } from "../../providers/api/api";
+import { Geolocation } from "@ionic-native/geolocation";
 
 @Component({
   selector: "page-home",
@@ -27,7 +28,13 @@ export class HomePage {
   };
   layers = [];
 
-  constructor(public navCtrl: NavController, public popover: PopoverController, public modal: ModalController, public api: ApiProvider) {}
+  constructor(
+    public navCtrl: NavController,
+    public popover: PopoverController,
+    public modal: ModalController,
+    public api: ApiProvider,
+    public geo: Geolocation
+  ) {}
 
   ionViewDidLoad() {
     setTimeout(() => {
@@ -37,6 +44,14 @@ export class HomePage {
 
   onMapReady(map: Map) {
     map.locate({ setView: true, maxZoom: 11 });
+    this.geo.getCurrentPosition().then((loc) => {
+      var mark = marker([loc.coords.latitude, loc.coords.longitude], {
+        riseOnHover: true,
+        title: "Mi Ubicación"
+      }).setPopupContent("Mi Ubicación");
+      mark.addTo(map);
+      map.flyTo([loc.coords.latitude, loc.coords.longitude]);
+    });
   }
 
   addPanel(mark: Marker, vet) {

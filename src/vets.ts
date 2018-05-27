@@ -8,6 +8,8 @@ export default [
     description: "Cuidados Veterinarios",
     phone_number: "6103104",
     rate: 0,
+    distance: null,
+    heading: null,
     latlng: { lat: 4.687484, lng: -74.0784845 },
     categories: ["consulta veterinaria", "urgencias"],
     services: [

@@ -8,6 +8,10 @@
       </ion-col>
       <ion-col col-8>
         <h3>{{vet.name}}</h3>
+        <p>
+          {{ (vet.distance / 1000) | number:'0.1-1' }} Km
+          <ion-icon xxxitem-left name="md-navigate" [ngStyle]="{'transform': 'rotateZ(' + vet.heading + 'deg)'}"></ion-icon>
+        </p>
         <p>{{vet.description}}</p>
       </ion-col>
     </ion-row>

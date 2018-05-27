@@ -16,7 +16,9 @@ export class VetPage {
     phone_number: "555-55555",
     email: "doggo@doge.com",
     website: "http://itsdoge.com",
-    rate: 5
+    rate: 5,
+    distance: null,
+    heading: null
   };
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, public navParams: NavParams) {
     this.vet = this.navParams.get("vet");
